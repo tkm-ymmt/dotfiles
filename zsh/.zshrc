@@ -65,8 +65,16 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/kodkod/.plenv/shims:/usr/local/bin:/Users/kodkod/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
+export PATH="/usr/local/bin:/Users/kodkod/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.nodebrew/current/bin:$PATH"
+export NODEBREW_ROOT=~/.nodebrew
+export RBENV_ROOT=/usr/local/var/rbenv
+
+## rbenv の設定
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
+
+
 
 # You may need to manually set your language environment
 export LANG=ja_JP.UTF-8
@@ -84,5 +92,9 @@ export LANG=ja_JP.UTF-8
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# cd -[tab] でpushd
+## cd -[tab] でpushd
 setopt autopushd
+
+## history 保管
+bindkey '^P' history-beginning-search-backward
+bindkey '^N' history-beginning-search-forward
