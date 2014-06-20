@@ -10,16 +10,18 @@ ZSH_THEME="bureau"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lh='~/localhost/'
-alias ls='ls -p'
-alias la='ls -a'
-alias ll='ls -l'
+alias www='~/www/'
+#alias ls='ls -p'
+#alias la='ls -a'
+#alias ll='ls -l'
 alias g='git'
+alias n='node'
 #alias ws='/Applications/WebStorm\ 2.app/Contents/MacOS/webide'
-alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
-alias zrc='~/dotfiles/zsh/.zshrc'
+#alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
+#alias zrc='~/dotfiles/zsh/.zshrc'
 alias grep='grep --color=always'
-
+alias ap='sudo apachectl'
+alias ta='tmux attach'
 
 
 # Uncomment the following line to use case-sensitive completion.
@@ -59,18 +61,18 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git tmux)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/Users/kodkod/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.nodebrew/current/bin:$PATH"
-export NODEBREW_ROOT=~/.nodebrew
-export RBENV_ROOT=/usr/local/var/rbenv
+#export PATH="r/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.nodebrew/current/bin:$PATH"
+#export NODEBREW_ROOT=~/.nodebrew
+#export RBENV_ROOT=/usr/local/var/rbenv
 
 ## rbenv の設定
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -87,8 +89,7 @@ export LANG=ja_JP.UTF-8
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+# export ARCHFLAGS="-arch x86_64"`
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
@@ -98,3 +99,6 @@ setopt autopushd
 ## history 保管
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
+
+## zmv
+autoload -Uz zmv
