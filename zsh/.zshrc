@@ -102,3 +102,7 @@ bindkey '^N' history-beginning-search-forward
 
 ## zmv
 autoload -Uz zmv
+
+
+# ローカルファイル読み込み
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
