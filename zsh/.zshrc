@@ -105,4 +105,4 @@ autoload -Uz zmv
 
 
 # ローカルファイル読み込み
-[ -f ~/.zshrc.local ] && source ~/.zshrc.local
+[ -f $ZSH/.zshrc.local ] && source $ZSH/.zshrc.local
