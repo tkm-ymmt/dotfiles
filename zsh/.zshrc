@@ -21,8 +21,12 @@ alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
 #alias zrc='~/dotfiles/zsh/.zshrc'
 alias grep='grep --color=always'
 #alias ap='sudo apachectl'
+alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
 alias ta='tmux attach'
-
+alias plx='sudo networksetup -setwebproxystate Wi-Fi'
+alias t='tar cf'
+alias gdt='~/bin/git-delta'
+alias ce='open -a CotEditor'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

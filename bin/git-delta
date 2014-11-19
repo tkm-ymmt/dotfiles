@@ -1,0 +1,6 @@
+#!/bin/sh
+
+HASHa="$1"
+HASHb="$2"
+
+git log --name-status --pretty=format:%n ${HASHa}..HEAD | sort | uniq | awk '($1 == "M" || $1 == "A") { print $2 }' | sort | uniq
