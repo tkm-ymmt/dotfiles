@@ -17,10 +17,10 @@ alias www='~/www/'
 alias g='git'
 alias n='node'
 #alias ws='/Applications/WebStorm\ 2.app/Contents/MacOS/webide'
-#alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
+alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
 #alias zrc='~/dotfiles/zsh/.zshrc'
 alias grep='grep --color=always'
-alias ap='sudo apachectl'
+#alias ap='sudo apachectl'
 alias ta='tmux attach'
 
 
@@ -67,6 +67,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+export PATH="/usr/local/sbin:/usr/local/bin:$PATH:"
 #export PATH="r/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.nodebrew/current/bin:$PATH"
 #export NODEBREW_ROOT=~/.nodebrew
 #export RBENV_ROOT=/usr/local/var/rbenv
