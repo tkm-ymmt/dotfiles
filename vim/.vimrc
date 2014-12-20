@@ -45,3 +45,30 @@ set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
 
 
 set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
+
+" 以下を追記
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
+endif 
+
+" 以下は必要に応じて追加
+NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'https://github.com/Lokaltog/powerline.git'
+
+filetype plugin indent on
+
+
+"powerline用
+set laststatus=2
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+"set noshowmode
+
