@@ -1,7 +1,7 @@
 set antialias
 set showtabline=2
-set columns=150
-set lines=28
+"set columns=150
+"set lines=28
 set linespace=4
 
 " フォントの設定

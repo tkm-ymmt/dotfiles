@@ -43,6 +43,21 @@ set showtabline=2
 set linespace=5
 set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
 
+" ファイルを開くとそのディレクトリに移動
+au BufEnter * execute ":lcd " . expand("%:p:h")
+
+
+" ローカルファイル読み込み。
+if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
+source ~/dotfiles/vim/.vimrc.local
+endif
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" 以下プラグインの設定
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
 
@@ -71,4 +86,7 @@ set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 "set noshowmode
+
+
+
 
