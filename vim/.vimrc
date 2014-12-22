@@ -30,8 +30,45 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "norm
 "#######################
 " 検索系
 "#######################
-set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
+"set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan "検索時に最後まで行ったら最初に戻る
-set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
-set nohlsearch "検索結果文字列の非ハイライト表示
+"set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
+"set nohlsearch "検索結果文字列の非ハイライト表示
+
+set antialias
+set showtabline=2
+"set columns=150
+"set lines=28
+set linespace=5
+set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
+
+
+set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
+
+" 以下を追記
+set nocompatible
+filetype plugin indent off
+
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#begin(expand('~/.vim/bundle/'))
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#end()
+endif 
+
+" 以下は必要に応じて追加
+NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'alpaca-tc/alpaca_powertabline'
+NeoBundle 'https://github.com/Lokaltog/powerline.git'
+
+filetype plugin indent on
+
+
+"powerline用
+set laststatus=2
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+let g:Powerline_symbols = 'fancy'
+"set noshowmode
+
