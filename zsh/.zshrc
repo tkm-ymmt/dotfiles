@@ -87,11 +87,11 @@ export PATH="/usr/local/sbin:/usr/local/bin:$PATH:"
 export LANG=ja_JP.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='mvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"`
@@ -109,5 +109,10 @@ bindkey '^N' history-beginning-search-forward
 autoload -Uz zmv
 
 
+#source ~/.bin/tmuxinator.zsh
+
 # ローカルファイル読み込み
 [ -f $ZSH/.zshrc.local ] && source $ZSH/.zshrc.local
+
+# ローカルファイル読み込み
+[ -f $ZSH/tmuxinator.zsh ] && source $ZSH/tmuxinator.zsh
