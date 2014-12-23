@@ -62,6 +62,9 @@ NeoBundle 'Shougo/unite.vim'
 "NeoBundle 'Shougo/neosnippet.vim'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'https://github.com/Lokaltog/powerline.git'
+NeoBundle "godlygeek/tabular"
+NeoBundle "joker1007/vim-markdown-quote-syntax"
+NeoBundle "rcmdnk/vim-markdown"
 
 filetype plugin indent on
 
@@ -72,3 +75,8 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 "set noshowmode
 
+"mdプラグイン用
+let g:vim_markdown_liquid=1
+let g:vim_markdown_frontmatter=1
+let g:vim_markdown_math=1
+au BufRead,BufNewFile *.{txt,text} set filetype=markdown
