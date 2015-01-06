@@ -56,7 +56,9 @@ source ~/dotfiles/vim/.vimrc.local
 endif
 
 
-
+" キーバインド
+" escキーを ctrl+jに。
+imap <c-j> <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 以下プラグインの設定
