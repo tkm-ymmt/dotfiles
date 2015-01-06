@@ -43,6 +43,9 @@ set showtabline=2
 set linespace=5
 set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
 
+" メタキー変更
+imap jj <esc>
+
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
@@ -80,6 +83,10 @@ NeoBundle 'https://github.com/Lokaltog/powerline.git'
 NeoBundle "godlygeek/tabular"
 NeoBundle "joker1007/vim-markdown-quote-syntax"
 NeoBundle "rcmdnk/vim-markdown"
+NeoBundle "Shougo/vimfiler"
+NeoBundle "Shougo/vimproc"
+NeoBundle "Shougo/vimshell"
+
 
 filetype plugin indent on
 
