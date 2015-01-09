@@ -88,6 +88,13 @@ NeoBundle "rcmdnk/vim-markdown"
 NeoBundle "Shougo/vimfiler"
 NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/vimshell"
+NeoBundle "nathanaelkane/vim-indent-guides"
+NeoBundle 'mattn/emmet-vim'
+NeoBundle 'taichouchou2/surround.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'taichouchou2/html5.vim'
+NeoBundle 'taichouchou2/vim-javascript'
+NeoBundle 'kchmck/vim-coffee-script'
 
 
 filetype plugin indent on
@@ -104,3 +111,4 @@ let g:vim_markdown_liquid=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+
