@@ -79,7 +79,11 @@ endif
 
 " 以下は必要に応じて追加
 NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'alpaca-tc/alpaca_powertabline'
 NeoBundle 'https://github.com/Lokaltog/powerline.git'
 NeoBundle "godlygeek/tabular"
@@ -106,9 +110,67 @@ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'fancy'
 "set noshowmode
 
+
 "mdプラグイン用
 let g:vim_markdown_liquid=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 au BufRead,BufNewFile *.{txt,text} set filetype=markdown
 
+
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" NeoSnippet用 他ファイル使用
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" NeoSnippet用 他ディレクトリ使用の際に追記
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
+
+"unite prefix key.
+nnoremap [unite] <Nop>
+nmap <Space>f [unite]
+
+"unite general settings
+"インサートモードで開始
+let g:unite_enable_start_insert = 1
+"最近開いたファイル履歴の保存数
+let g:unite_source_file_mru_limit = 50
+
+"file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
+"let g:unite_source_file_mru_filename_format = ''
+
+"現在開いているファイルのディレクトリ下のファイル一覧。
+"開いていない場合はカレントディレクトリ
+nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+"バッファ一覧
+nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+"レジスタ一覧
+nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
+"最近使用したファイル一覧
+nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
+"ブックマーク一覧
+nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
+"ブックマークに追加
+nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
+"uniteを開いている間のキーマッピング
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"{{{
+  "escでuniteを終了
+  nmap <buffer> <esc> <plug>(unite_exit)
+  "入力モードのときjjでノーマルモードに移動
+  imap <buffer> jj <plug>(unite_insert_leave)
+  "入力モードのときctrl+wでバックスラッシュも削除
+  imap <buffer> <c-w> <plug>(unite_delete_backward_path)
+  "ctrl+jで縦に分割して開く
+  nnoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
+  inoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
+  "ctrl+jで横に分割して開く
+  nnoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
+  inoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
+  "ctrl+oでその場所に開く
+  nnoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
+  inoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
+endfunction"}}}
