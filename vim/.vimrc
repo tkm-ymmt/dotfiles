@@ -94,7 +94,7 @@ NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/vimshell"
 NeoBundle "nathanaelkane/vim-indent-guides"
 NeoBundle 'mattn/emmet-vim'
-NeoBundle 'taichouchou2/surround.vim'
+NeoBundle 'tpope/vim-surround'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
@@ -107,7 +107,7 @@ filetype plugin indent on
 "powerline用
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'fancy'
+let g:Powerline_symbols = 'off'
 "set noshowmode
 
 
@@ -116,7 +116,6 @@ let g:vim_markdown_liquid=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 au BufRead,BufNewFile *.{txt,text} set filetype=markdown
-
 
 " Plugin key-mappings.  " <C-k>でsnippetの展開
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
