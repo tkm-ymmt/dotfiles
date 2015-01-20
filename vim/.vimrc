@@ -92,7 +92,8 @@ NeoBundle "rcmdnk/vim-markdown"
 NeoBundle "Shougo/vimfiler"
 NeoBundle "Shougo/vimproc"
 NeoBundle "Shougo/vimshell"
-NeoBundle "nathanaelkane/vim-indent-guides"
+"NeoBundle "nathanaelkane/vim-indent-guides"
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -173,3 +174,7 @@ function! s:unite_my_settings()"{{{
   nnoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
 endfunction"}}}
+
+" indentLine用
+let g:indentLine_leadingSpaceChar = '·'
+let g:indentLine_leadingSpaceEnabled = 1 
