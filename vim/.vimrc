@@ -21,11 +21,29 @@ set smartindent "オートインデント
 set expandtab "タブの代わりに空白文字挿入
 set ts=2 sw=2 sts=0 "タブは半角4文字分のスペース
 " 空白文字表示
-set list
-set listchars=nbsp:.,eol:_,tab:>>,trail:.,extends:>,precedes:<
+"set list
+"set listchars=nbsp:.,eol:_,tab:>>,trail:.,extends:>,precedes:<
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
+
+" 括弧、クォーテーションを入力した際にカーソルを内部に持っていく
+imap {} {}<Left>
+imap [] []<Left>
+imap () ()<Left>
+imap “” “”<Left>
+imap ” ”<Left>
+imap <> <><Left>
+imap “ “<Left>
+
+" セーブした時に行末の不要な空白を削除する関数
+function! RTrim()
+let s:cursor = getpos(“.”)
+%s/\s\+$//e
+call setpos(“.”, s:cursor)
+endfunction
+
+autocmd BufWritePre *.php,*.html,*.css,*.js call RTrim()
 
 "#######################
 " 検索系
@@ -55,10 +73,6 @@ if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
 source ~/dotfiles/vim/.vimrc.local
 endif
 
-
-" キーバインド
-" escキーを ctrl+jに。
-" imap <c-j> <esc>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 以下プラグインの設定
@@ -158,19 +172,19 @@ nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
 "uniteを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
-  "escでuniteを終了
+"escでuniteを終了
   nmap <buffer> <esc> <plug>(unite_exit)
-  "入力モードのときjjでノーマルモードに移動
+"入力モードのときjjでノーマルモードに移動
   imap <buffer> jj <plug>(unite_insert_leave)
-  "入力モードのときctrl+wでバックスラッシュも削除
+"入力モードのときctrl+wでバックスラッシュも削除
   imap <buffer> <c-w> <plug>(unite_delete_backward_path)
-  "ctrl+jで縦に分割して開く
+"ctrl+jで縦に分割して開く
   nnoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
   inoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
-  "ctrl+jで横に分割して開く
+"ctrl+jで横に分割して開く
   nnoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
   inoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
-  "ctrl+oでその場所に開く
+"ctrl+oでその場所に開く
   nnoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
 endfunction"}}}
