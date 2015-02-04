@@ -32,18 +32,9 @@ imap {} {}<Left>
 imap [] []<Left>
 imap () ()<Left>
 imap “” “”<Left>
-imap ” ”<Left>
+imap '' ''<Left>
 imap <> <><Left>
 imap “ “<Left>
-
-" セーブした時に行末の不要な空白を削除する関数
-function! RTrim()
-let s:cursor = getpos(“.”)
-%s/\s\+$//e
-call setpos(“.”, s:cursor)
-endfunction
-
-autocmd BufWritePre *.php,*.html,*.css,*.js call RTrim()
 
 "#######################
 " 検索系
@@ -114,7 +105,7 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
-
+NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 filetype plugin indent on
 
