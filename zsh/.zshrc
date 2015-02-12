@@ -17,16 +17,18 @@ alias www='~/www/'
 alias g='git'
 alias n='node'
 #alias ws='/Applications/WebStorm\ 2.app/Contents/MacOS/webide'
-alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
+alias ap='sudo /usr/local/Cellar/httpd24/2.4.12/bin/apachectl'
 #alias zrc='~/dotfiles/zsh/.zshrc'
 alias grep='grep --color=always'
 #alias ap='sudo apachectl'
-alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
+#alias ap='sudo /usr/local/Cellar/httpd/2.2.27/sbin/apachectl'
 alias ta='tmux attach'
 alias plx='sudo networksetup -setwebproxystate Wi-Fi'
 alias t='tar cf'
 alias gdt='~/bin/git-delta'
 alias ce='open -a CotEditor'
+alias flets='cd ~/www/flets-w'
+
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -71,7 +73,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:$PATH:"
+#export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/local/bin:PATH:"
 #export PATH="r/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.nodebrew/current/bin:$PATH"
 #export NODEBREW_ROOT=~/.nodebrew
 #export RBENV_ROOT=/usr/local/var/rbenv

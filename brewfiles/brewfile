@@ -31,8 +31,8 @@ openssl
 ossp-uuid
 pcre
 phantomjs
-php54
-php56
+____php54
+____php56
 pkg-config
 pngquant
 postgresql
@@ -51,7 +51,7 @@ tmux
 tree
 ttyrec
 unixodbc
-vim
+____vim
 wget
 xz
 zlib

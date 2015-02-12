@@ -1,0 +1,16 @@
+{
+   "content_scripts": [ {
+      "exclude_globs": [  ],
+      "exclude_matches": [  ],
+      "include_globs": [ "http://redmine.rebelt.co.jp/*", "https://redmine.rebelt.co.jp/*" ],
+      "js": [ "script.js" ],
+      "matches": [ "http://redmine.rebelt.co.jp/*", "https://redmine.rebelt.co.jp/*" ],
+      "run_at": "document_end"
+   } ],
+   "converted_from_user_script": true,
+   "description": "Rebelt Redmine Utilities",
+   "key": "IV+J+Dct+gcDgzkgknLXUECje1kUyjRydc1Ude6XyxQ=",
+   "name": "Redmine Ulilties",
+   "version": "0.0.2",
+   "manifest_version": 2
+}
