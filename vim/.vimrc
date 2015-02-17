@@ -47,7 +47,6 @@ set wrapscan "検索時に最後まで行ったら最初に戻る
 
 set noswapfile
 set nobackup
-set ambiwidth=double
 set antialias
 set showtabline=2
 "set columns=150
