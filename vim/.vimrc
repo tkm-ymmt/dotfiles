@@ -111,6 +111,7 @@ NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
 
 filetype plugin indent on
 
+set guifont=M+\ 2m\ regular\ for\ Powerline:h13
 
 "powerline用
 set laststatus=2
