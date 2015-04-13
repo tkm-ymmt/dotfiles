@@ -1,0 +1,6 @@
+#!/bin/sh
+
+FROM="$1"
+TO="$2"
+
+git archive --format=zip --prefix=archive/ ${TO} `git diff --name-only ${TO} ${FROM}` -o ~/Desktop/a.zip
