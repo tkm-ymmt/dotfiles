@@ -4,3 +4,4 @@
 *.swp
 .vimrc.local
 .DS_store
+tmux.window.local.conf
