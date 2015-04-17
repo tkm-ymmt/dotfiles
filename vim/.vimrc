@@ -109,6 +109,13 @@ NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-git'
+NeoBundle 'cohama/agit.vim'
+NeoBundle 'rhysd/committia.vim'
+NeoBundle 'idanarye/vim-merginal'
+
+
 
 filetype plugin indent on
 
