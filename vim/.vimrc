@@ -61,6 +61,8 @@ imap jj <esc>
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+" 検索の際に正規表現を普通に使えるようにする。
+nmap / /\v
 
 " ローカルファイル読み込み。
 if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
@@ -114,6 +116,7 @@ NeoBundle 'tpope/vim-git'
 NeoBundle 'cohama/agit.vim'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'idanarye/vim-merginal'
+NeoBundle 'gregsexton/gitv.git'
 
 
 
@@ -189,8 +192,11 @@ function! s:unite_my_settings()"{{{
 "ctrl+oでその場所に開く
   nnoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
   inoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
+"ctrl+tでその場所に開く
+  nnoremap <silent> <buffer> <expr> <c-t> unite#do_action('tabopen')
+  inoremap <silent> <buffer> <expr> <c-t> unite#do_action('tabopen')
 endfunction"}}}
 
 " indentLine用
 let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1 
+let g:indentLine_leadingSpaceEnabled = 1
