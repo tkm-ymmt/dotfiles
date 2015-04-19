@@ -5,3 +5,4 @@
 .vimrc.local
 .DS_store
 tmux.window.local.conf
+window.local.conf
