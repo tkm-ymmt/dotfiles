@@ -42,8 +42,9 @@ imap “ “<Left>
 "set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan "検索時に最後まで行ったら最初に戻る
-"set noincsearch "検索文字列入力時に順次対象文字列にヒットさせない
+set incsearch "インクリメンタルサーチ on
 "set nohlsearch "検索結果文字列の非ハイライト表示
+set hlsearch " 検索結果のハイライト
 
 set noswapfile
 set nobackup
@@ -54,6 +55,14 @@ set showtabline=2
 "set lines=28
 set linespace=5
 set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
+set wildmenu wildmode=list:full "コマンドラインモードの補完機能 on
+" set cursorline " カーソルのある行の強調表示
+
+" ハイライト色の設定
+highlight Normal ctermbg=black ctermfg=grey
+highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
+highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
+
 
 " メタキー変更
 imap jj <esc>
@@ -135,7 +144,7 @@ let g:Powerline_symbols = 'off'
 let g:vim_markdown_liquid=1
 let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
-au BufRead,BufNewFile *.{txt,text} set filetype=markdown
+au BufRead,BufNewFile *.{txt,text,md} set filetype=markdown
 
 " Plugin key-mappings.  " <C-k>でsnippetの展開
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
