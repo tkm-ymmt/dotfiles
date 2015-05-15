@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var url = 'http://192.168.223.222:8081/shindan_ngn/orange/index.html';
+var url = '';
 var page = require('webpage').create();
 page.onResourceRequested = function(request) {
   console.log('Request ' + JSON.stringify(request, undefined, 4));
