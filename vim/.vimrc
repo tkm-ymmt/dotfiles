@@ -126,7 +126,7 @@ NeoBundle 'cohama/agit.vim'
 NeoBundle 'rhysd/committia.vim'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'gregsexton/gitv.git'
-
+NeoBundle 'rking/ag.vim'
 
 
 filetype plugin indent on
