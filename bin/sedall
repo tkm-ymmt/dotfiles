@@ -1,0 +1,6 @@
+#!/bin/sh
+
+FROM="$1"
+TO="$2"
+
+ag -l --html ${FROM} ./ | xargs sed -i -e "s/${FROM}/${TO}/g"
