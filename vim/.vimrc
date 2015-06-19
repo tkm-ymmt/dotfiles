@@ -127,6 +127,7 @@ NeoBundle 'rhysd/committia.vim'
 NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'gregsexton/gitv.git'
 NeoBundle 'rking/ag.vim'
+NeoBundle 'kannokanno/previm'
 
 
 filetype plugin indent on
@@ -165,7 +166,7 @@ nmap <Space>f [unite]
 "インサートモードで開始
 let g:unite_enable_start_insert = 1
 "最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50
+let g:unite_source_file_mru_limit = 5000
 
 "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
 "let g:unite_source_file_mru_filename_format = ''
@@ -209,3 +210,11 @@ endfunction"}}}
 " indentLine用
 let g:indentLine_leadingSpaceChar = '·'
 let g:indentLine_leadingSpaceEnabled = 1
+
+" previm用
+let g:previm_open_cmd = 'open -a Google\ Chrome'
+let g:previm_enable_realtime = 0
+" デフォルトのCSSに加えて独自のCSSも適用する
+"let g:previm_custom_css_path = '/Users/kanno/tmp/some.css'
+
+nmap <Space>p :PrevimOpen<CR>
