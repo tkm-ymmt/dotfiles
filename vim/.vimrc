@@ -128,7 +128,8 @@ NeoBundle 'idanarye/vim-merginal'
 NeoBundle 'gregsexton/gitv.git'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'kannokanno/previm'
-
+NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'kana/vim-submode'
 
 filetype plugin indent on
 
@@ -166,7 +167,7 @@ nmap <Space>f [unite]
 "インサートモードで開始
 let g:unite_enable_start_insert = 1
 "最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 5000
+let g:unite_source_file_mru_limit = 50000
 
 "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
 "let g:unite_source_file_mru_filename_format = ''
@@ -216,5 +217,58 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 let g:previm_enable_realtime = 0
 " デフォルトのCSSに加えて独自のCSSも適用する
 "let g:previm_custom_css_path = '/Users/kanno/tmp/some.css'
-
 nmap <Space>p :PrevimOpen<CR>
+
+" v連打で選択範囲を広げる
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1, 
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'ip'  :0,
+      \ 'ie'  :0,
+      \ }
+
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" 選択範囲にペーストできる
+function! RestoreRegister()
+  let @" = s:restore_reg
+  return ''
+endfunction
+function! s:Repl()
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
+endfunction
+vmap <silent> <expr> p <sid>Repl()
+
+
+" C-w から spaceへ
+" let mapleader = "\<Space>"
+"nnoremap [space] <Nop>
+"nmap <space> [space]
+nnoremap <Space>j <C-w>j
+nnoremap <Space>k <C-w>k
+nnoremap <Space>l <C-w>l
+nnoremap <Space>h <C-w>h
+nnoremap <Space>J <C-w>J
+nnoremap <Space>K <C-w>K
+nnoremap <Space>L <C-w>L
+nnoremap <Space>H <C-w>H
+nnoremap <Space>s :<C-u>sp<CR>
+nnoremap <Space>v :<C-u>vs<CR>
+
+" submode設定
+call submode#enter_with('winsize', 'n', '', '<Space>>', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<Space><', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<Space>-', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', '<Space>+', '<C-w>+')
+call submode#map('winsize', 'n', '', '>', '<Space>>')
+call submode#map('winsize', 'n', '', '<', '<Space><')
+call submode#map('winsize', 'n', '', '+', '<Space>+')
+call submode#map('winsize', 'n', '', '-', '<Space>-')
