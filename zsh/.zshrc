@@ -29,7 +29,6 @@ alias gdt='~/bin/git-delta'
 alias ce='open -a CotEditor'
 alias flets='cd ~/www/flets-w'
 
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 

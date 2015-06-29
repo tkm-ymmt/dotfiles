@@ -1,0 +1,4 @@
+#!/bin/sh
+
+STR=$1
+curl --data ${STR} $'https://rebelt.slack.com/services/hooks/slackbot?token=jCAcDK47DvsoHysVQq6aAPAT&channel=%23random'
