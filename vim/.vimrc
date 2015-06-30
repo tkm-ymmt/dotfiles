@@ -11,7 +11,7 @@ set ruler "ルーラーの表示
 set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
-set clipboard+=unnamed
+set clipboard=unnamed,autoselect
 
 "#######################
 " プログラミングヘルプ系
