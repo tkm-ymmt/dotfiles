@@ -7,3 +7,4 @@
 tmux.window.local.conf
 window.local.conf
 login.expect
+say_sb
