@@ -79,7 +79,7 @@ if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
 source ~/dotfiles/vim/.vimrc.local
 endif
 
-
+set foldmethod=manual
 let mapleader = "\<Space>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
