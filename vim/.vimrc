@@ -80,6 +80,8 @@ source ~/dotfiles/vim/.vimrc.local
 endif
 
 
+let mapleader = "\<Space>"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 以下プラグインの設定
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,3 +275,10 @@ call submode#map('winsize', 'n', '', '>', '<Space>>')
 call submode#map('winsize', 'n', '', '<', '<Space><')
 call submode#map('winsize', 'n', '', '+', '<Space>+')
 call submode#map('winsize', 'n', '', '-', '<Space>-')
+
+
+" vimFilerをデフォルトファイラーに。
+let g:vimfiler_as_default_explorer = 1
+
+" vimFilerを開く時は必ず35のwidthで。
+nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
