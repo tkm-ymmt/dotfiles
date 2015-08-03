@@ -133,6 +133,7 @@ NeoBundle 'rking/ag.vim'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'vim-scripts/YankRing.vim'
 
 filetype plugin indent on
 
@@ -279,6 +280,9 @@ call submode#map('winsize', 'n', '', '-', '<Space>-')
 
 " vimFilerをデフォルトファイラーに。
 let g:vimfiler_as_default_explorer = 1
+
+" vimFilerのセーフモードをoff
+let g:vimfiler_safe_mode_by_default = 0
 
 " vimFilerを開く時は必ず35のwidthで。
 nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
