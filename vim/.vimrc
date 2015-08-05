@@ -134,6 +134,7 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'vim-scripts/YankRing.vim'
+NeoBundle 'nvie/vim-flake8'
 
 filetype plugin indent on
 
@@ -286,3 +287,7 @@ let g:vimfiler_safe_mode_by_default = 0
 
 " vimFilerを開く時は必ず35のwidthで。
 nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+
+" python 構文チェック
+let g:flake8_cmd="/usr/local/var/pyenv/versions/3.4.3/bin/flake8"
+nnoremap  <leader>l :call Flake8()
