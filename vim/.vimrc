@@ -290,4 +290,4 @@ nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35
 
 " python 構文チェック
 let g:flake8_cmd="/usr/local/var/pyenv/versions/3.4.3/bin/flake8"
-nnoremap  <leader>l :call Flake8()<CR>
+nnoremap  <leader><leader>l :call Flake8()<CR>
