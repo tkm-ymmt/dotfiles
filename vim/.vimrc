@@ -135,8 +135,9 @@ NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'vim-scripts/YankRing.vim'
 NeoBundle 'easymotion/vim-easymotion'
-" python コード整形
-" NeoBundle 'andviro/flake8-vim'
+NeoBundle 'nvie/vim-flake8'
+NeoBundle 'stephpy/vim-php-cs-fixer'
+NeoBundle 'wakatime/vim-wakatime'
 
 filetype plugin indent on
 
@@ -224,7 +225,7 @@ let g:previm_open_cmd = 'open -a Google\ Chrome'
 let g:previm_enable_realtime = 0
 " デフォルトのCSSに加えて独自のCSSも適用する
 "let g:previm_custom_css_path = '/Users/kanno/tmp/some.css'
-nmap <Space>p :PrevimOpen<CR>
+nnoremap <Leader>p :PrevimOpen<CR>
 
 " v連打で選択範囲を広げる
 let g:expand_region_text_objects = {
@@ -288,7 +289,7 @@ let g:vimfiler_as_default_explorer = 1
 let g:vimfiler_safe_mode_by_default = 0
 
 " vimFilerを開く時は必ず35のwidthで。
-nnoremap <silent> <Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
+nnoremap <silent><Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
 
 " easy-motionの設定
 " {{{
@@ -308,9 +309,28 @@ nmap s <Plug>(easymotion-s2)
 let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
 " }}}
 
 " python コード自動整形
 " nnoremap <Leader><Leader>p :PyFlake<CR>
+" python 構文チェック
+let g:flake8_cmd="/usr/local/var/pyenv/versions/3.4.3/bin/flake8"
+nnoremap  <leader><leader>l :call Flake8()<CR>
+
+
+" phpをキレイに。
+" If php-cs-fixer is in $PATH, you don't need to define line below
+" let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer" " define the path to the php-cs-fixer.phar
+" let g:php_cs_fixer_level = "symfony"              " which level ?
+" let g:php_cs_fixer_config = "default"             " configuration
+" let g:php_cs_fixer_php_path = "/usr/local/bin/php"               " Path to PHP
+" " If you want to define specific fixers:
+" "let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
+" let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+" let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+" let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+" 
+" nnoremap <silent><leader><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+" nnoremap <silent><leader><leader>pcf :call PhpCsFixerFixFile()<CR>

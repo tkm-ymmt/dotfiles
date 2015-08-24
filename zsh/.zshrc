@@ -28,6 +28,9 @@ alias t='tar cf'
 alias gdt='~/bin/git-delta'
 alias ce='open -a CotEditor'
 alias flets='cd ~/www/flets-w'
+alias dc='docker-compose'
+alias dm='docker-machine'
+alias hant='~/office_product/hant-project'
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -117,3 +120,7 @@ autoload -Uz zmv
 
 # ローカルファイル読み込み
 [ -f $ZSH/tmuxinator.zsh ] && source $ZSH/tmuxinator.zsh
+
+# docker-compose用補完機能
+fpath=(~/dotfile/zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
