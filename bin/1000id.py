@@ -1,7 +1,4 @@
-#!/usr/bin/env python
-#encode='UTF-8'
-
-import sys, random
+import random, sys
 
 def make_id():
     a = [chr(i) for i in range(ord('A'), ord('Z')+1)]
@@ -11,14 +8,16 @@ def make_id():
     a = a + b + c
     random.shuffle(a)
     st = ''
-    l = int(sys.argv[1])
+    l = int(18)
 
     for i in range(l):
         st += a[i]
 
     return st
 
+f = open('/Users/takumi/Desktop/1000id', 'w')
+for x in range(1000):
+    print(make_id(), file=f)
 
-if __name__ = __main__():
-    print(make_id())
+f.close()
 
