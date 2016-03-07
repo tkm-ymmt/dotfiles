@@ -72,6 +72,9 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 " メタキー変更
 imap jj <esc>
 
+" $ remap
+nnoremap <Space>z $
+
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
