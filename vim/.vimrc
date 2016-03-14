@@ -99,6 +99,8 @@ if has('vim_starting')
   call neobundle#end()
 endif 
 
+call neobundle#begin(expand('~/.vim/bundle/'))
+
 " 以下は必要に応じて追加
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
@@ -119,7 +121,7 @@ NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/html5.vim'
+"NeoBundle 'taichouchou2/html5.vim'
 NeoBundle 'taichouchou2/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
@@ -138,6 +140,9 @@ NeoBundle 'easymotion/vim-easymotion'
 NeoBundle 'nvie/vim-flake8'
 NeoBundle 'stephpy/vim-php-cs-fixer'
 NeoBundle 'wakatime/vim-wakatime'
+
+
+call neobundle#end()
 
 filetype plugin indent on
 
