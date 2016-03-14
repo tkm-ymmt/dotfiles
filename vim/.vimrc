@@ -72,12 +72,14 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 " メタキー変更
 imap jj <esc>
 
-" $ remap
-nnoremap <Space>z $
+" 移動キー remap
+noremap <S-h>   ^
+noremap <S-l>   $
 
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
@@ -87,7 +89,6 @@ source ~/dotfiles/vim/.vimrc.local
 endif
 
 set foldmethod=manual
-let mapleader = "\<Space>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 以下プラグインの設定
@@ -344,4 +345,4 @@ nnoremap  <leader><leader>l :call Flake8()<CR>
 
 " this is better to write end of file.
 set encoding=utf-8
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
