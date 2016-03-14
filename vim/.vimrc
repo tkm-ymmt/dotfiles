@@ -1,9 +1,8 @@
 
 set nocompatible "vi非互換モード
 
-"#######################
-" 表示系
-"#######################
+
+
 set number "行番号表示
 set showmode "モード表示
 set title "編集中のファイル名を表示
@@ -14,9 +13,6 @@ set laststatus=2 "ステータスラインを常に表示
 set clipboard=unnamed,autoselect
 set nrformats= " 0Nを10進数扱い
 
-"#######################
-" プログラミングヘルプ系
-"#######################
 syntax on "カラー表示
 set smartindent "オートインデント
 " tab関連
@@ -41,9 +37,6 @@ imap '' ''<Left>
 imap <> <><Left>
 imap “ “<Left>
 
-"#######################
-" 検索系
-"#######################
 "set ignorecase "検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set smartcase "検索文字列に大文字が含まれている場合は区別して検索する
 set wrapscan "検索時に最後まで行ったら最初に戻る
@@ -56,10 +49,8 @@ set nobackup
 " set ambiwidth=double
 set antialias
 set showtabline=2
-"set columns=150
-"set lines=28
 set linespace=5
-set guifont=Sauce\ Code\ Powerline\ for\ Powerline:h11
+set guifont=M+\ 2m\ regular\ for\ Powerline:h13
 set wildmenu wildmode=list:full "コマンドラインモードの補完機能 on
 " set cursorline " カーソルのある行の強調表示
 
@@ -83,271 +74,18 @@ let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
+set foldmethod=manual
+" this is better to write end of file.
+set encoding=utf-8
+" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+
+
 " ローカルファイル読み込み。
 if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
 source ~/dotfiles/vim/.vimrc.local
 endif
 
-set foldmethod=manual
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" 以下プラグインの設定
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
-
-" 以下を追記
-filetype plugin indent off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
-endif 
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" 以下は必要に応じて追加
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'https://github.com/Lokaltog/powerline.git'
-NeoBundle "godlygeek/tabular"
-NeoBundle "joker1007/vim-markdown-quote-syntax"
-NeoBundle "rcmdnk/vim-markdown"
-NeoBundle "Shougo/vimfiler"
-NeoBundle "Shougo/vimproc"
-NeoBundle "Shougo/vimshell"
-"NeoBundle "nathanaelkane/vim-indent-guides"
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'hail2u/vim-css3-syntax'
-"NeoBundle 'taichouchou2/html5.vim'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'rhysd/committia.vim'
-NeoBundle 'idanarye/vim-merginal'
-NeoBundle 'gregsexton/gitv.git'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'kana/vim-submode'
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'nvie/vim-flake8'
-NeoBundle 'stephpy/vim-php-cs-fixer'
-NeoBundle 'wakatime/vim-wakatime'
-
-
-call neobundle#end()
-
-filetype plugin indent on
-
-set guifont=M+\ 2m\ regular\ for\ Powerline:h13
-
-"powerline用
-set laststatus=2
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'off'
-"set noshowmode
-
-
-"mdプラグイン用
-let g:vim_markdown_liquid=1
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_math=1
-au BufRead,BufNewFile *.{txt,text,md} set filetype=markdown
-
-" Plugin key-mappings.  " <C-k>でsnippetの展開
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" NeoSnippet用 他ファイル使用
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" NeoSnippet用 他ディレクトリ使用の際に追記
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
-
-
-"unite prefix key.
-nnoremap [unite] <Nop>
-nmap <Space>f [unite]
-
-"unite general settings
-"インサートモードで開始
-let g:unite_enable_start_insert = 1
-"最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50000
-
-"file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
-"let g:unite_source_file_mru_filename_format = ''
-
-"現在開いているファイルのディレクトリ下のファイル一覧。
-"開いていない場合はカレントディレクトリ
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-"バッファ一覧
-nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
-"レジスタ一覧
-nnoremap <silent> [unite]r :<C-u>Unite -buffer-name=register register<CR>
-"最近使用したファイル一覧
-nnoremap <silent> [unite]m :<C-u>Unite file_mru<CR>
-"ブックマーク一覧
-nnoremap <silent> [unite]c :<C-u>Unite bookmark<CR>
-"ブックマークに追加
-nnoremap <silent> [unite]a :<C-u>UniteBookmarkAdd<CR>
-"uniteを開いている間のキーマッピング
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
-"escでuniteを終了
-  nmap <buffer> <esc> <plug>(unite_exit)
-"入力モードのときjjでノーマルモードに移動
-  imap <buffer> jj <plug>(unite_insert_leave)
-"入力モードのときctrl+wでバックスラッシュも削除
-  imap <buffer> <c-w> <plug>(unite_delete_backward_path)
-"ctrl+jで縦に分割して開く
-  nnoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
-  inoremap <silent> <buffer> <expr> <c-j> unite#do_action('split')
-"ctrl+jで横に分割して開く
-  nnoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
-  inoremap <silent> <buffer> <expr> <c-l> unite#do_action('vsplit')
-"ctrl+oでその場所に開く
-  nnoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
-  inoremap <silent> <buffer> <expr> <c-o> unite#do_action('open')
-"ctrl+tでその場所に開く
-  nnoremap <silent> <buffer> <expr> <c-t> unite#do_action('tabopen')
-  inoremap <silent> <buffer> <expr> <c-t> unite#do_action('tabopen')
-endfunction"}}}
-
-" indentLine用
-let g:indentLine_leadingSpaceChar = '·'
-let g:indentLine_leadingSpaceEnabled = 1
-
-" previm用
-let g:previm_open_cmd = 'open -a Google\ Chrome'
-let g:previm_enable_realtime = 0
-" デフォルトのCSSに加えて独自のCSSも適用する
-"let g:previm_custom_css_path = '/Users/kanno/tmp/some.css'
-nnoremap <Leader>p :PrevimOpen<CR>
-
-" v連打で選択範囲を広げる
-let g:expand_region_text_objects = {
-      \ 'iw'  :0,
-      \ 'iW'  :0,
-      \ 'i"'  :0,
-      \ 'i''' :0,
-      \ 'i]'  :1, 
-      \ 'ib'  :1,
-      \ 'iB'  :1,
-      \ 'il'  :0,
-      \ 'ip'  :0,
-      \ 'ie'  :0,
-      \ }
-
-vmap v <Plug>(expand_region_expand)
-vmap <C-v> <Plug>(expand_region_shrink)
-
-" 選択範囲にペーストできる
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
-
-
-" C-w から spaceへ
-" let mapleader = "\<Space>"
-"nnoremap [space] <Nop>
-"nmap <space> [space]
-nnoremap <Space>j <C-w>j
-nnoremap <Space>k <C-w>k
-nnoremap <Space>l <C-w>l
-nnoremap <Space>h <C-w>h
-nnoremap <Space>J <C-w>J
-nnoremap <Space>K <C-w>K
-nnoremap <Space>L <C-w>L
-nnoremap <Space>H <C-w>H
-nnoremap <Space>s :<C-u>sp<CR>
-nnoremap <Space>v :<C-u>vs<CR>
-
-" submode設定
-call submode#enter_with('winsize', 'n', '', '<Space>>', '<C-w>>')
-call submode#enter_with('winsize', 'n', '', '<Space><', '<C-w><')
-call submode#enter_with('winsize', 'n', '', '<Space>-', '<C-w>-')
-call submode#enter_with('winsize', 'n', '', '<Space>+', '<C-w>+')
-call submode#map('winsize', 'n', '', '>', '<Space>>')
-call submode#map('winsize', 'n', '', '<', '<Space><')
-call submode#map('winsize', 'n', '', '+', '<Space>+')
-call submode#map('winsize', 'n', '', '-', '<Space>-')
-
-
-" vimFilerをデフォルトファイラーに。
-let g:vimfiler_as_default_explorer = 1
-
-" vimFilerのセーフモードをoff
-let g:vimfiler_safe_mode_by_default = 0
-
-" vimFilerを開く時は必ず35のwidthで。
-nnoremap <silent><Leader>fi :<C-u>VimFilerBufferDir -split -simple -winwidth=35 -no-quit<CR>
-
-" easy-motionの設定
-" {{{
-map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_do_mapping = 0 " Disable default mappings
-
-" Bi-directional find motion
-" Jump to anywhere you want with minimal keystrokes, with just one key binding.
-" `s{char}{label}`
-nmap s <Plug>(easymotion-s)
-" or
-" `s{char}{char}{label}`
-" Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-s2)
-
-" Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1
-
-" JK motions: Line motions
-map <Leader><Leader>j <Plug>(easymotion-j)
-map <Leader><Leader>k <Plug>(easymotion-k)
-" }}}
-
-" python コード自動整形
-" nnoremap <Leader><Leader>p :PyFlake<CR>
-" python 構文チェック
-let g:flake8_cmd="/usr/local/var/pyenv/versions/3.4.3/bin/flake8"
-nnoremap  <leader><leader>l :call Flake8()<CR>
-
-
-" phpをキレイに。
-" If php-cs-fixer is in $PATH, you don't need to define line below
-" let g:php_cs_fixer_path = "/usr/local/bin/php-cs-fixer" " define the path to the php-cs-fixer.phar
-" let g:php_cs_fixer_level = "symfony"              " which level ?
-" let g:php_cs_fixer_config = "default"             " configuration
-" let g:php_cs_fixer_php_path = "/usr/local/bin/php"               " Path to PHP
-" " If you want to define specific fixers:
-" "let g:php_cs_fixer_fixers_list = "linefeed,short_tag,indentation"
-" let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
-" let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
-" let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
-" 
-" nnoremap <silent><leader><leader>pcd :call PhpCsFixerFixDirectory()<CR>
-" nnoremap <silent><leader><leader>pcf :call PhpCsFixerFixFile()<CR>
-
-
-" this is better to write end of file.
-set encoding=utf-8
-" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+" ローカルファイル読み込み。
+if filereadable(expand('~/dotfiles/vim/.vimrc.plugin'))
+source ~/dotfiles/vim/.vimrc.plugin
+endif
