@@ -19,6 +19,6 @@ def make_id():
     return st
 
 
-if __name__ = __main__():
+if __name__ == __main__():
     print(make_id())
 

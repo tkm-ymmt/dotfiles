@@ -12,6 +12,7 @@ set showcmd "入力中のコマンドをステータスに表示する
 set showmatch "括弧入力時の対応する括弧を表示
 set laststatus=2 "ステータスラインを常に表示
 set clipboard=unnamed,autoselect
+set nrformats= " 0Nを10進数扱い
 
 "#######################
 " プログラミングヘルプ系
@@ -24,6 +25,9 @@ set ts=2 sw=2 sts=0 "タブは半角4文字分のスペース
 " 空白文字表示
 "set list
 "set listchars=nbsp:.,eol:_,tab:>>,trail:.,extends:>,precedes:<
+
+set diffopt=filler,vertical " diffモード設定
+
 
 " ファイルを開いた際に、前回終了時の行で起動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
@@ -68,9 +72,14 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 " メタキー変更
 imap jj <esc>
 
+" 移動キー remap
+noremap <S-h>   ^
+noremap <S-l>   $
+
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
 
+let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
@@ -80,7 +89,6 @@ source ~/dotfiles/vim/.vimrc.local
 endif
 
 set foldmethod=manual
-let mapleader = "\<Space>"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " 以下プラグインの設定
@@ -89,7 +97,6 @@ let mapleader = "\<Space>"
 set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
 
 " 以下を追記
-set nocompatible
 filetype plugin indent off
 
 if has('vim_starting')
@@ -339,3 +346,8 @@ nnoremap  <leader><leader>l :call Flake8()<CR>
 " 
 " nnoremap <silent><leader><leader>pcd :call PhpCsFixerFixDirectory()<CR>
 " nnoremap <silent><leader><leader>pcf :call PhpCsFixerFixFile()<CR>
+
+
+" this is better to write end of file.
+set encoding=utf-8
+" set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
