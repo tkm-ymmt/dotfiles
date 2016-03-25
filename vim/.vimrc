@@ -89,3 +89,9 @@ endif
 if filereadable(expand('~/dotfiles/vim/.vimrc.plugin'))
 source ~/dotfiles/vim/.vimrc.plugin
 endif
+
+" load functions
+if filereadable(expand('~/dotfiles/vim/.vimrc.func'))
+source ~/dotfiles/vim/.vimrc.func
+endif
+

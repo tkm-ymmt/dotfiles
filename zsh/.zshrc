@@ -124,3 +124,4 @@ autoload -Uz zmv
 # docker-compose用補完機能
 fpath=(~/dotfile/zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
+

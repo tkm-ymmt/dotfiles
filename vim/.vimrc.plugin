@@ -58,8 +58,7 @@ set guifont=M+\ 2m\ regular\ for\ Powerline:h13
 "powerline用
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'off'
-"set noshowmode
+let g:Powerline_symbols = 'on'
 
 
 "mdプラグイン用
