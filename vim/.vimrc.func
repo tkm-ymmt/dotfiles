@@ -7,3 +7,9 @@ function! s:VSetSearch()
   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
   let @s = temp
 endfunction
+
+
+let MVR = "~/dotfiles/vim/.vimrc"
+
+noremap <Leader><Leader><Leader> :<C-u>edit <C-r>=MVR<CR><CR>
+noremap <Leader><Leader>s :<C-u>source <C-r>=MVR<CR>

@@ -69,6 +69,7 @@ noremap <S-l>   $
 
 " ファイルを開くとそのディレクトリに移動
 au BufEnter * execute ":lcd " . expand("%:p:h")
+" autocm BufEnter * if expand('%:p') ~! '://' | cd %:p:h | endif
 
 let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
