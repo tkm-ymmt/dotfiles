@@ -1,72 +1,9 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath^=.//repos/github.com/Shougo/dein.vim
-
-" Required:
-call dein#begin(expand('./'))
-
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
-
-call dein#add('Shougo/unite.vim')
-call dein#add('Shougo/neomru.vim')
-call dein#add('Shougo/neocomplete')
-call dein#add('Shougo/neosnippet')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('honza/vim-snippets')
-call dein#add('alpaca-tc/alpaca_powertabline')
-call dein#add('https://github.com/Lokaltog/powerline.git')
-call dein#add("godlygeek/tabular")
-call dein#add("joker1007/vim-markdown-quote-syntax")
-call dein#add("rcmdnk/vim-markdown")
-call dein#add("Shougo/vimfiler")
-call dein#add("Shougo/vimproc")
-call dein#add('Yggdroot/indentLine')
-call dein#add('mattn/emmet-vim')
-call dein#add('tpope/vim-surround')
-call dein#add('hail2u/vim-css3-syntax')
-call dein#add('taichouchou2/vim-javascript')
-call dein#add('kchmck/vim-coffee-script')
-call dein#add('mattn/gist-vim', {'depends': 'mattn/webapi-vim'})
-call dein#add('tpope/vim-fugitive')
-call dein#add('tpope/vim-git')
-call dein#add('cohama/agit.vim')
-call dein#add('rhysd/committia.vim')
-call dein#add('idanarye/vim-merginal')
-call dein#add('gregsexton/gitv.git')
-call dein#add('rking/ag.vim')
-call dein#add('kannokanno/previm')
-call dein#add('terryma/vim-expand-region')
-call dein#add('vim-scripts/YankRing.vim')
-call dein#add('easymotion/vim-easymotion')
-call dein#add('nvie/vim-flake8')
-call dein#add('stephpy/vim-php-cs-fixer')
-
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-" Required:
-call dein#end()
-
-" Required:
 filetype plugin indent on
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
 
 "powerline用
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'on'
-
 
 "mdプラグイン用
 let g:vim_markdown_liquid=1
@@ -220,3 +157,4 @@ let g:EasyMotion_smartcase = 1
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
 " }}}
+"

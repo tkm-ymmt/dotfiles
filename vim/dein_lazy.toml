@@ -1,0 +1,40 @@
+# dein_lazy.toml
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = ['coffeescript']
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = ['css']
+
+[[plugins]]
+repo = 'tpope/vim-surround'
+on_ft = ['html']
+
+[[plugins]]
+repo = "joker1007/vim-markdown-quote-syntax"
+on_ft = ['markdown']
+
+[[plugins]]
+repo = "rcmdnk/vim-markdown"
+on_ft = ['markdown']
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_i = 1
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+on_i = 1
