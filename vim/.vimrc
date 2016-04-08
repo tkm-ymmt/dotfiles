@@ -68,7 +68,7 @@ noremap <S-h>   ^
 noremap <S-l>   $
 
 " ファイルを開くとそのディレクトリに移動
-au BufEnter * execute ":lcd " . expand("%:p:h")
+" au BufEnter * execute ":lcd " . expand("%:p:h")
 " autocm BufEnter * if expand('%:p') ~! '://' | cd %:p:h | endif
 
 let mapleader = "\<Space>"
@@ -87,8 +87,8 @@ source ~/dotfiles/vim/.vimrc.local
 endif
 
 " ローカルファイル読み込み。
-if filereadable(expand('~/dotfiles/vim/.vimrc.plugin'))
-source ~/dotfiles/vim/.vimrc.plugin
+if filereadable(expand('~/dotfiles/vim/.vimrc.dein'))
+source ~/dotfiles/vim/.vimrc.dein
 endif
 
 " load functions

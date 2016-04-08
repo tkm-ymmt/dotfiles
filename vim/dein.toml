@@ -1,0 +1,79 @@
+# dein.toml
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'alpaca-tc/alpaca_powertabline'
+
+[[plugins]]
+repo = 'https://github.com/Lokaltog/powerline.git'
+
+[[plugins]]
+repo = "godlygeek/tabular"
+
+[[plugins]]
+repo = "Shougo/vimfiler"
+
+[[plugins]]
+repo = "Shougo/vimproc"
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'tpope/vim-git'
+
+[[plugins]]
+repo = 'cohama/agit.vim'
+
+[[plugins]]
+repo = 'rhysd/committia.vim'
+
+[[plugins]]
+repo = 'idanarye/vim-merginal'
+
+[[plugins]]
+repo = 'gregsexton/gitv.git'
+
+[[plugins]]
+repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'kannokanno/previm'
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+
+[[plugins]]
+repo = 'vim-scripts/YankRing.vim'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+
+[[plugins]]
+repo = 'mattn/webapi-vim'
+
+# call dein#add('nvie/vim-flake8')
+# call dein#add('stephpy/vim-php-cs-fixer')
+# 
+# " You can specify revision/branch/tag.
+[[plugins]]
+repo = 'Shougo/vimshell'
+rev  = '3787e5'
+
+[[plugins]]
+repo = 'mattn/gist-vim'
+depends = ['mattn/webapi-vim']

@@ -1,66 +1,10 @@
-" set runtimepath+=~/dotfiles/vim/plugin/neobundle.vim/
-
-filetype plugin indent off
-
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#begin(expand('~/.vim/bundle/'))
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#end()
-endif 
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/neocomplete'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'alpaca-tc/alpaca_powertabline'
-NeoBundle 'https://github.com/Lokaltog/powerline.git'
-NeoBundle "godlygeek/tabular"
-NeoBundle "joker1007/vim-markdown-quote-syntax"
-NeoBundle "rcmdnk/vim-markdown"
-NeoBundle "Shougo/vimfiler"
-NeoBundle "Shougo/vimproc"
-NeoBundle "Shougo/vimshell"
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'taichouchou2/vim-javascript'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'mattn/gist-vim', {'depends': 'mattn/webapi-vim'}
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-git'
-NeoBundle 'cohama/agit.vim'
-NeoBundle 'rhysd/committia.vim'
-NeoBundle 'idanarye/vim-merginal'
-NeoBundle 'gregsexton/gitv.git'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'kana/vim-submode'
-NeoBundle 'vim-scripts/YankRing.vim'
-NeoBundle 'easymotion/vim-easymotion'
-NeoBundle 'nvie/vim-flake8'
-NeoBundle 'stephpy/vim-php-cs-fixer'
-NeoBundle 'wakatime/vim-wakatime'
-
-
-call neobundle#end()
-
 filetype plugin indent on
-
-set guifont=M+\ 2m\ regular\ for\ Powerline:h13
 
 "powerline用
 set laststatus=2
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 let g:Powerline_symbols = 'off'
 "set noshowmode
-
 
 "mdプラグイン用
 let g:vim_markdown_liquid=1
@@ -224,9 +168,3 @@ let g:EasyMotion_smartcase = 1
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
 " }}}
-
-" python コード自動整形
-" nnoremap <Leader><Leader>p :PyFlake<CR>
-" python 構文チェック
-let g:flake8_cmd="/usr/local/var/pyenv/versions/3.4.3/bin/flake8"
-nnoremap  <leader><leader>l :call Flake8()<CR>
