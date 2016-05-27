@@ -13,3 +13,5 @@ let MVR = "~/dotfiles/vim/.vimrc"
 
 noremap <Leader><Leader><Leader> :<C-u>edit <C-r>=MVR<CR><CR>
 noremap <Leader><Leader>s :<C-u>source <C-r>=MVR<CR>
+
+vmap <Leader>p "0p

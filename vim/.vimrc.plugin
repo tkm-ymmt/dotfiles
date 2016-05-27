@@ -1,10 +1,6 @@
 filetype plugin indent on
 
-"powerline用
-set laststatus=2
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-let g:Powerline_symbols = 'off'
-"set noshowmode
+
 
 "mdプラグイン用
 let g:vim_markdown_liquid=1
@@ -101,15 +97,15 @@ vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
 " 選択範囲にペーストできる
-function! RestoreRegister()
-  let @" = s:restore_reg
-  return ''
-endfunction
-function! s:Repl()
-  let s:restore_reg = @"
-  return "p@=RestoreRegister()\<cr>"
-endfunction
-vmap <silent> <expr> p <sid>Repl()
+" function! RestoreRegister()
+"   let @" = s:restore_reg
+"   return ''
+" endfunction
+" function! s:Repl()
+"   let s:restore_reg = @"
+"   return "p@=RestoreRegister()\<cr>"
+" endfunction
+" vmap <silent> <expr> p <sid>Repl()
 
 
 " C-w から spaceへ
@@ -128,14 +124,14 @@ nnoremap <Space>s :<C-u>sp<CR>
 nnoremap <Space>v :<C-u>vs<CR>
 
 " submode設定
-call submode#enter_with('winsize', 'n', '', '<Space>>', '<C-w>>')
-call submode#enter_with('winsize', 'n', '', '<Space><', '<C-w><')
-call submode#enter_with('winsize', 'n', '', '<Space>-', '<C-w>-')
-call submode#enter_with('winsize', 'n', '', '<Space>+', '<C-w>+')
-call submode#map('winsize', 'n', '', '>', '<Space>>')
-call submode#map('winsize', 'n', '', '<', '<Space><')
-call submode#map('winsize', 'n', '', '+', '<Space>+')
-call submode#map('winsize', 'n', '', '-', '<Space>-')
+" call submode#enter_with('winsize', 'n', '', '<Space>>', '<C-w>>')
+" call submode#enter_with('winsize', 'n', '', '<Space><', '<C-w><')
+" call submode#enter_with('winsize', 'n', '', '<Space>-', '<C-w>-')
+" call submode#enter_with('winsize', 'n', '', '<Space>+', '<C-w>+')
+" call submode#map('winsize', 'n', '', '>', '<Space>>')
+" call submode#map('winsize', 'n', '', '<', '<Space><')
+" call submode#map('winsize', 'n', '', '+', '<Space>+')
+" call submode#map('winsize', 'n', '', '-', '<Space>-')
 
 
 " vimFilerをデフォルトファイラーに。
@@ -168,3 +164,18 @@ let g:EasyMotion_smartcase = 1
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
 " }}}
+
+" for syntastic
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
+
+nmap <Leader>/ <Plug>(caw:hatpos:toggle)
+vmap <Leader>/ <Plug>(caw:hatpos:toggle)

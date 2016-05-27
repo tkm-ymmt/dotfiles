@@ -1,19 +1,20 @@
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+"set runtimepath^=/Users/takumi/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " dein.vim がなければ github から落としてくる
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_dir)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
-  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  execute 'set runtimepath^=runtimepath^=/Users/takumi/.cache/dein/repos/github.com/Shougo/dein.vim'
 endif
 
 " 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  let s:rc_dir = '/Users/kodkod/dotfiles/vim'
+  let s:rc_dir = '/Users/takumi/dotfiles/vim'
   " プラグインリストを収めた TOML ファイル
   let s:toml      = s:rc_dir . '/dein.toml'
   let s:lazy_toml = s:rc_dir . '/dein_lazy.toml'

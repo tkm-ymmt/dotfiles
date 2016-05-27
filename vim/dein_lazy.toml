@@ -11,9 +11,6 @@ on_ft = ['coffeescript']
 repo = 'hail2u/vim-css3-syntax'
 on_ft = ['css']
 
-[[plugins]]
-repo = 'tpope/vim-surround'
-on_ft = ['html']
 
 [[plugins]]
 repo = "joker1007/vim-markdown-quote-syntax"

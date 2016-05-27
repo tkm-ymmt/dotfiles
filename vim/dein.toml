@@ -13,7 +13,7 @@ repo = 'Shougo/neomru.vim'
 repo = 'alpaca-tc/alpaca_powertabline'
 
 [[plugins]]
-repo = 'https://github.com/Lokaltog/powerline.git'
+repo = 'Lokaltog/powerline'
 
 [[plugins]]
 repo = "godlygeek/tabular"
@@ -23,6 +23,7 @@ repo = "Shougo/vimfiler"
 
 [[plugins]]
 repo = "Shougo/vimproc"
+build = 'make'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -64,7 +65,14 @@ repo = 'vim-scripts/YankRing.vim'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
+
 
 # call dein#add('nvie/vim-flake8')
 # call dein#add('stephpy/vim-php-cs-fixer')
@@ -73,6 +81,9 @@ repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'Shougo/vimshell'
 rev  = '3787e5'
+
+[[plugins]]
+repo = 'scrooloose/syntastic'
 
 [[plugins]]
 repo = 'mattn/gist-vim'
