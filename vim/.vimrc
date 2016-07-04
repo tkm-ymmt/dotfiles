@@ -54,6 +54,8 @@ set guifont=M+\ 2m\ regular\ for\ Powerline:h13
 set wildmenu wildmode=list:full "コマンドラインモードの補完機能 on
 " set cursorline " カーソルのある行の強調表示
 
+filetype plugin indent on
+
 " ハイライト色の設定
 highlight Normal ctermbg=black ctermfg=grey
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
@@ -99,19 +101,12 @@ if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
 source ~/dotfiles/vim/.vimrc.local
 endif
 
-let s:dein_dir = expand('~/.cache/dein')
-" dein.vim 本体
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-if !isdirectory(s:dein_repo_dir)
-  execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-endif
-execute 'set runtimepath^=/Users/takumi/.cache/dein/repos/github.com/Shougo/dein.vim'
 
-" ローカルファイル読み込み。
-if filereadable(expand('~/dotfiles/vim/.vimrc.dein'))
-source ~/dotfiles/vim/.vimrc.dein
-endif
+" " ローカルファイル読み込み。
+" if filereadable(expand('~/dotfiles/vim/.vimrc.dein'))
+" source ~/dotfiles/vim/.vimrc.dein
+" endif
 
 " load functions
 if filereadable(expand('~/dotfiles/vim/.vimrc.func'))
