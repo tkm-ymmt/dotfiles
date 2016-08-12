@@ -1,4 +1,5 @@
 
+
 set nocompatible "vi非互換モード
 
 
@@ -114,5 +115,18 @@ source ~/dotfiles/vim/.vimrc.func
 endif
 
 
+
+
+
+" Plugin key-mappings.  " <C-k>でsnippetの展開
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+vmap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+" NeoSnippet用 他ファイル使用
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" NeoSnippet用 他ディレクトリ使用の際に追記
+let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
 

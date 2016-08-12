@@ -22,6 +22,15 @@ repo = "godlygeek/tabular"
 repo = "Shougo/vimfiler"
 
 [[plugins]]
+repo = "Shougo/neocomplcache"
+
+[[plugins]]
+repo = "Shougo/neosnippet-snippets"
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+
+[[plugins]]
 repo = "Shougo/vimproc"
 build = 'make'
 
@@ -72,6 +81,10 @@ repo = 'tyru/caw.vim'
 
 [[plugins]]
 repo = 'mattn/webapi-vim'
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
 
 
 # call dein#add('nvie/vim-flake8')

@@ -8,15 +8,6 @@ let g:vim_markdown_frontmatter=1
 let g:vim_markdown_math=1
 au BufRead,BufNewFile *.{txt,text,md} set filetype=markdown
 
-" Plugin key-mappings.  " <C-k>でsnippetの展開
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-
-" NeoSnippet用 他ファイル使用
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" NeoSnippet用 他ディレクトリ使用の際に追記
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 
 "unite prefix key.
@@ -180,3 +171,8 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 nmap <Leader>/ <Plug>(caw:hatpos:toggle)
 vmap <Leader>/ <Plug>(caw:hatpos:toggle)
+
+let g:EditorConfig_exec_path = '/Users/takumi/.cache/dein/repos/github.com/editorconfig/editorconfig-vim/plugin/editorconfig.py'
+
+
+

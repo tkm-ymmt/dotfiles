@@ -21,17 +21,11 @@ repo = "rcmdnk/vim-markdown"
 on_ft = ['markdown']
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
+repo = 'honza/vim-snippets'
 on_i = 1
 
 [[plugins]]
 repo = 'Shougo/neosnippet'
+depends = ['neosnippet-snippets']
 on_i = 1
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
-on_i = 1
-
-[[plugins]]
-repo = 'honza/vim-snippets'
-on_i = 1
+on_ft = ['snippet']
