@@ -15,3 +15,12 @@ noremap <Leader><Leader><Leader> :<C-u>edit <C-r>=MVR<CR><CR>
 noremap <Leader><Leader>s :<C-u>source <C-r>=MVR<CR>
 
 vmap <Leader>p "0p
+
+
+function! s:SayHello()
+  let @a = substitute(expand("%:p:h"), '/Users/kodkod/dotfiles', '', 'g')
+  return @a
+endfunction
+
+" inoremap <expr> <C-h> <SID>SayHello()
+
