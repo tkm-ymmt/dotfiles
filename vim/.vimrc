@@ -78,7 +78,7 @@ let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
-set foldmethod=manual
+" set foldmethod=manual
 " this is better to write end of file.
 set encoding=utf-8
 " set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
@@ -129,4 +129,5 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " NeoSnippet用 他ディレクトリ使用の際に追記
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
-
+set foldmethod=manual
+set foldcolumn=5 
