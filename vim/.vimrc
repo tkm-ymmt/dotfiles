@@ -131,3 +131,5 @@ let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
 set foldmethod=manual
 set foldcolumn=5 
+
+let g:esa_team = 'frisk'

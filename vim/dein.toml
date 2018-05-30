@@ -101,3 +101,7 @@ repo = 'scrooloose/syntastic'
 [[plugins]]
 repo = 'mattn/gist-vim'
 depends = ['mattn/webapi-vim']
+
+[[plugins]]
+repo = 'upamune/esa.vim'
+depends = ['mattn/webapi-vim']
