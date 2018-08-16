@@ -117,6 +117,7 @@ endif
 
 
 
+let g:esa_team='frisk'
 
 " Plugin key-mappings.  " <C-k>でsnippetの展開
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -132,4 +133,3 @@ let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 set foldmethod=manual
 set foldcolumn=5 
 
-let g:esa_team = 'frisk'
