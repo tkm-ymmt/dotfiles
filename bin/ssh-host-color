@@ -1,0 +1,5 @@
+if [[ "$@" =~ mac ]]; then
+  set_term_bgcolor 200 200 200
+elif [[ "$@" =~ git ]]; then
+  set_term_bgcolor 0 40 0
+fi

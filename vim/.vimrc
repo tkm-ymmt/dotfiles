@@ -78,11 +78,8 @@ let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
-set foldmethod=syntax
-let perl_fold=1
-set foldlevel=100 "Don't autofold anything
-
-
+" set foldmethod=manual
+" this is better to write end of file.
 set encoding=utf-8
 " set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
@@ -121,6 +118,7 @@ endif
 
 
 
+let g:esa_team='frisk'
 
 " Plugin key-mappings.  " <C-k>でsnippetの展開
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -134,5 +132,6 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
 
 au BufRead,BufNewFile *.{txt,text,md} set filetype=markdown
-
+set foldmethod=manual
+set foldcolumn=5 
 
