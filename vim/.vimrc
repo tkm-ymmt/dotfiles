@@ -78,14 +78,22 @@ let mapleader = "\<Space>"
 " 検索の際に正規表現を普通に使えるようにする。
 nmap / /\v
 
-set foldmethod=manual
-" this is better to write end of file.
+set foldmethod=syntax
+let perl_fold=1
+set foldlevel=100 "Don't autofold anything
+
+
 set encoding=utf-8
 " set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
+" ローカルファイル読み込み。
+"if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
+"source ~/dotfiles/vim/.vimrc.local
+"endif
+
 
 " setting for powerline
-set rtp+=/Users/takumi/.cache/dein/repos/github.com/Lokaltog/powerline/powerline/bindings/vim
+set rtp+=/Users/kodkod/.cache/dein/repos/github.com/Lokaltog/powerline/powerline/bindings/vim
 " python from powerline.vim import setup as powerline_setup
 " python powerline_setup()
 " python del powerline_setup
@@ -97,10 +105,6 @@ set showtabline=2
 set noshowmode
 "set noshowmode
 
-" ローカルファイル読み込み。
-if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
-source ~/dotfiles/vim/.vimrc.local
-endif
 
 
 
@@ -128,5 +132,7 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 
 " NeoSnippet用 他ディレクトリ使用の際に追記
 let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets'
+
+au BufRead,BufNewFile *.{txt,text,md} set filetype=markdown
 
 

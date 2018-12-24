@@ -1,16 +1,3 @@
-# dein_lazy.toml
-[[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
-
-[[plugins]]
-repo = 'kchmck/vim-coffee-script'
-on_ft = ['coffeescript']
-
-[[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-on_ft = ['css']
-
 
 [[plugins]]
 repo = "joker1007/vim-markdown-quote-syntax"

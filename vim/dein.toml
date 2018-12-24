@@ -21,14 +21,9 @@ repo = "godlygeek/tabular"
 [[plugins]]
 repo = "Shougo/vimfiler"
 
-[[plugins]]
-repo = "Shougo/neocomplcache"
 
 [[plugins]]
 repo = "Shougo/neosnippet-snippets"
-
-[[plugins]]
-repo = 'Shougo/neocomplete.vim'
 
 [[plugins]]
 repo = "Shougo/vimproc"
@@ -37,26 +32,6 @@ build = 'make'
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
-[[plugins]]
-repo = 'mattn/emmet-vim'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'tpope/vim-git'
-
-[[plugins]]
-repo = 'cohama/agit.vim'
-
-[[plugins]]
-repo = 'rhysd/committia.vim'
-
-[[plugins]]
-repo = 'idanarye/vim-merginal'
-
-[[plugins]]
-repo = 'gregsexton/gitv.git'
 
 [[plugins]]
 repo = 'rking/ag.vim'
@@ -71,9 +46,6 @@ repo = 'terryma/vim-expand-region'
 repo = 'vim-scripts/YankRing.vim'
 
 [[plugins]]
-repo = 'easymotion/vim-easymotion'
-
-[[plugins]]
 repo = 'tpope/vim-surround'
 
 [[plugins]]
@@ -86,18 +58,7 @@ repo = 'mattn/webapi-vim'
 repo = 'editorconfig/editorconfig-vim'
 
 
-
-# call dein#add('nvie/vim-flake8')
-# call dein#add('stephpy/vim-php-cs-fixer')
-# 
-# " You can specify revision/branch/tag.
 [[plugins]]
-repo = 'Shougo/vimshell'
-rev  = '3787e5'
+repo = 'upamune/esa.vim'
 
-[[plugins]]
-repo = 'scrooloose/syntastic'
 
-[[plugins]]
-repo = 'mattn/gist-vim'
-depends = ['mattn/webapi-vim']
