@@ -83,18 +83,10 @@ nmap / /\v
 set encoding=utf-8
 " set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 
-" ローカルファイル読み込み。
-"if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
-"source ~/dotfiles/vim/.vimrc.local
-"endif
 
 
 " setting for powerline
-set rtp+=/Users/kodkod/.cache/dein/repos/github.com/Lokaltog/powerline/powerline/bindings/vim
-" python from powerline.vim import setup as powerline_setup
-" python powerline_setup()
-" python del powerline_setup
-" set rtp+=/Users/takumi/.cache/dein/repos/github.com/Lokaltog/powerline/powerline/bindings/vim
+set rtp+=~/.cache/dein/repos/github.com/Lokaltog/powerline/powerline/bindings/vim
 "powerline用
 set laststatus=2
 let g:Powerline_symbols = 'on'
@@ -104,11 +96,15 @@ set noshowmode
 
 
 
+" ローカルファイル読み込み。
+if filereadable(expand('~/dotfiles/vim/.vimrc.local'))
+  source ~/dotfiles/vim/.vimrc.local
+endif
 
 " " ローカルファイル読み込み。
-" if filereadable(expand('~/dotfiles/vim/.vimrc.dein'))
-" source ~/dotfiles/vim/.vimrc.dein
-" endif
+if filereadable(expand('~/dotfiles/vim/.vimrc.dein'))
+  source ~/dotfiles/vim/.vimrc.dein
+endif
 
 " load functions
 if filereadable(expand('~/dotfiles/vim/.vimrc.func'))

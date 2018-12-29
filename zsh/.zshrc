@@ -1,5 +1,3 @@
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/zsh/
 
@@ -22,8 +20,8 @@ setopt share_history # share command history data
 # Example aliases
 alias www='~/www/'
 #alias ls='ls -p'
-#alias la='ls -a'
-#alias ll='ls -l'
+alias la='ls -a'
+alias ll='ls -l'
 alias g='git'
 alias grep='grep --color=always'
 alias ta='tmux attach'
@@ -65,9 +63,6 @@ autoload -Uz zmv
 # ローカルファイル読み込み
 [ -f $ZSH/.zshrc.local ] && source $ZSH/.zshrc.local
 
-# ローカルファイル読み込み
-[ -f $ZSH/tmuxinator.zsh ] && source $ZSH/tmuxinator.zsh
-
 # docker-compose用補完機能
 fpath=(~/dotfile/zsh/completion $fpath)
 autoload -Uz compinit && compinit -i
@@ -92,6 +87,7 @@ zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 
 typeset -ga chpwd_functions
 
+autoload -U is-at-least
 if is-at-least 4.3.11; then
   autoload -U chpwd_recent_dirs cdr
   chpwd_functions+=chpwd_recent_dirs
@@ -101,4 +97,10 @@ if is-at-least 4.3.11; then
 fi
 # recent directories stack END
 
+
+
 zstyle ':prezto:module:prompt' pwd-length 'long'
+
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+
